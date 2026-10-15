@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel do Aluno | SGE</title>
+
+<style>
+:root {
+  --preto: #101410;
+  --painel: #191f1a;
+  --verde: #39d353;
+  --texto: #f3f7f3;
+  --suave: #b6c2b7;
+  --borda: #303b31;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--preto);
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #080b08;
+  border-bottom: 1px solid var(--borda);
+  padding: 22px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.icone {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--verde);
+  color: #071008;
+  display: grid;
+  place-items: center;
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+
+nav a {
+  color: var(--suave);
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: var(--verde);
+}
+
+main {
+  width: min(1100px, 86%);
+  margin: 42px auto;
+  flex: 1;
+}
+
+.boas-vindas {
+  background: linear-gradient(115deg, #1b2b1d, #151a15);
+  border: 1px solid #2d482f;
+  border-radius: 18px;
+  padding: 32px;
+  margin-bottom: 34px;
+}
+
+.etiqueta {
+  color: var(--verde);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.78rem;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin: 12px 0;
+}
+
+.boas-vindas p {
+  color: var(--suave);
+  line-height: 1.6;
+  max-width: 650px;
+}
+
+.titulo-secao {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.titulo-secao h2 {
+  font-size: 1.45rem;
+}
+
+.titulo-secao p {
+  color: var(--suave);
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+.eventos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.evento {
+  background: var(--painel);
+  border: 1px solid var(--borda);
+  border-radius: 15px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  min-height: 270px;
+}
+
+.categoria {
+  display: inline-block;
+  align-self: flex-start;
+  background: #203c24;
+  color: var(--verde);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.evento h3 {
+  font-size: 1.15rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.detalhe {
+  color: var(--suave);
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.evento button {
+  margin-top: auto;
+  padding: 11px 14px;
+  border: none;
+  border-radius: 9px;
+  background: var(--verde);
+  color: #071008;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.evento button:hover {
+  background: #5be66f;
+}
+
+.nota {
+  color: var(--suave);
+  font-size: 0.85rem;
+  margin-top: 18px;
+}
+
+footer {
+  border-top: 1px solid var(--borda);
+  background: #080b08;
+  text-align: center;
+  color: var(--suave);
+  padding: 22px;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+footer strong {
+  color: var(--verde);
+}
+
+@media (max-width: 850px) {
+  .eventos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  header {
+    padding: 18px 6%;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+
+  main {
+    width: 88%;
+    margin: 28px auto;
+  }
+
+  .boas-vindas {
+    padding: 24px;
+  }
+
+  .eventos {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="marca">
+    <div class="icone">S</div>
+    <span>SGE <span style="color:var(--verde)">|</span> Eventos</span>
+  </div>
+
+  <nav aria-label="Navegação principal">
+    <a href="#inicio">Início</a>
+    <a href="#eventos">Eventos</a>
+  </nav>
+</header>
+
+<main>
+  <section class="boas-vindas" id="inicio">
+    <span class="etiqueta">Área do estudante</span>
+    <h1>Painel do Aluno</h1>
+    <p>
+      Encontre palestras, oficinas e outras atividades da escola.
+      Confira as informações dos próximos eventos e escolha
+      aqueles de que deseja participar.
+    </p>
+  </section>
+
+  <section id="eventos">
+    <div class="titulo-secao">
+      <div>
+        <h2>Próximos eventos</h2>
+        <p>Confira as atividades disponíveis na escola.</p>
+      </div>
+    </div>
+
+    <div class="eventos">
+
+      <article class="evento">
+        <span class="categoria">Palestra</span>
+        <h3>Tecnologia e o Futuro do Trabalho</h3>
+        <p class="detalhe">
+          Data: 18/11/2026<br>
+          Horário: 19h às 21h<br>
+          Local: Auditório da escola
+        </p>
+        <button type="button">Inscrever-se</button>
+      </article>
+
+      <article class="evento">
+        <span class="categoria">Oficina</span>
+        <h3>Introdução ao Desenvolvimento Web</h3>
+        <p class="detalhe">
+          Data: 24/11/2026<br>
+          Horário: 14h às 16h<br>
+          Local: Laboratório de informática
+        </p>
+        <button type="button">Inscrever-se</button>
+      </article>
+
+      <article class="evento">
+        <span class="categoria">Workshop</span>
+        <h3>Inovação e Projetos de Tecnologia</h3>
+        <p class="detalhe">
+          Data: 02/12/2026<br>
+          Horário: 19h às 20h30<br>
+          Local: Sala de eventos
+        </p>
+        <button type="button">Inscrever-se</button>
+      </article>
+
+    </div>
+
+    <p class="nota">
+      Observação: os eventos apresentados são exemplos
+      para demonstrar o protótipo.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <p><strong>SGE</strong> — Sistema de Gestão de Eventos</p>
+  <p> CENTRO ESTADUAL DE ENSINO PROFISSIONAL - CEEP• Protótipo de interface</p>
+</footer>
+
+</body>
+</html>
